@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car selection</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var car=function(make,model){
+			this.make;
+			this.model;
+		}
+		var car1=new Object();
+		car1.make="Ford";
+		var car2=new Object();
+		car2.make="Fiat";
+		var car3=new Object();
+		car3.make="Seat";
+		var car4=new Object();
+		car4.make="Volkswagen";
+		function getModel(){
+			var op1=document.getElementById('opt1').value=car1.make;
+			var op2=document.getElementById('opt2').value=car2.make;
+			var op3=document.getElementById('opt3').value=car3.make;
+			var op4=document.getElementById('opt4').value=car4.make;
+            var m=document.getElementById('selection');
+            var txtBox=m.options[m.selectedIndex].value;
+            document.getElementById('txt').value="Selection is:" + txtBox;
+            
+            	if(txtBox==op1){
+            	document.getElementById('mustang').style.display="inline";
+            	document.getElementById('golfVI').style.display= "none";
+            	document.getElementById('punto').style.display="none";
+            	document.getElementById('ibiza').style.display="none";	
+            	}
+            	else if(txtBox==op2){
+            	document.getElementById('punto').style.display="inline";
+            	document.getElementById('mustang').style.display="none";
+            	document.getElementById('ibiza').style.display="none";
+            	document.getElementById('golfVI').style.display= "none";
+            	}
+            	else if(txtBox==op3){
+            	document.getElementById('ibiza').style.display="inline";
+            	document.getElementById('mustang').style.display="none";
+            	document.getElementById('golfVI').style.display= "none";
+            	document.getElementById('punto').style.display="none";
+            	}
+            	else if(txtBox==op4){
+            	document.getElementById('golfVI').style.display= "inline";
+            	document.getElementById('mustang').style.display="none";
+            	document.getElementById('punto').style.display="none";
+            	document.getElementById('ibiza').style.display="none";
+            	}else
+            	 	document.getElementById('pic').style.display= "none";
+            
+		}
+	</script>
+	
+</head>
+<body>
+
+<h1 style="text-align: center;">Select a car</h1>
+<div style="text-align: center;">
+<form>
+	<SELECT   id ="selection" onchange="getModel()" >
+		<option  id="opt1">Ford</option>
+		<option  id="opt2">Fiat</option>
+		<option  id="opt3">Seat</option>
+		<option  id="opt4">Volkswagen</option>
+	</SELECT>
+</form>
+</div>
+<div style="text-align: center;margin-top:5px;">
+	<input type="text" name="textBox" id="txt" value="Your selection">
+</div>
+<br>
+<div id="pic" style="text-align: center;">
+	<img id="mustang" style="display: none;width: 400px" src="mustang.png" alt="Image">
+    <img id="punto" style="display: none;width: 400px" src="fiat-punto.png" alt="Image">
+    <img id="ibiza" style="display: none;width: 400px" src="seat-ibiza.png" alt="Image">
+    <img id="golfVI" style="display: none;width: 400px" src="golf-VI.png" alt="Image">
+</div>
+
+</body>
+</html>
